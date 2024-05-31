@@ -1,0 +1,84 @@
+@import './index.scss';
+
+.banner{
+    position: relative;
+    object-fit: cover;
+    width: 100%;
+}
+.arrival-box{
+    background-color:transparent;
+    width: 550px;
+    height: 450px;
+    position: absolute;
+    top: 200px;
+    left: 1050px;
+}
+.head1{ 
+   font-size: $h1;
+   letter-spacing: 5px;
+   padding-left: 25%;
+   color: $color4;
+   margin-bottom: 1%;
+}
+.head2{
+  font-size: $h9;
+  font-family: $family;
+  padding-left: 7%;
+  color: $color4;
+  margin-bottom: 2%;
+}
+.para{
+  font-size: $h2;
+  font-family: $family;
+  padding-left:2%;
+  color: $color4;
+}
+.btn{
+  border: 1px solid $color4;
+  font-size: $h1;
+  font-family: $family;
+  font-weight: 500;
+  color:$color4;
+  background-color:$color1;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  justify-content: center;
+  align-items: center;
+}
+.b-btn{
+  padding-left: 30%;
+}
+.fur-info{
+  margin-top: 3%;
+}
+.heading{
+  font-size: $h7;
+  font-family: $family;
+  text-align: center;
+  color: $color4;
+}
+.prag{
+  font-size: $h2;
+  font-family: $family;
+  text-align: center;
+  color: $color2;
+}
+.fur-category{
+   justify-content: center;
+   display: flex;
+   margin-top: 3%;
+
+.categories{
+  display: flex;
+
+  .catlog{
+    padding-left: 2rem;
+  }
+  .type{
+    margin-left: 9.5rem;
+    font-family: $family;
+    font-size: $h3;
+    color: $color4;
+  }
+}
+}

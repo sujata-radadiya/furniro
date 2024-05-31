@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+$color1 :#B88E2F;
+$color2 : #9F9F9F;
+$color3 :#FFFFFF;
+$color4 :#000000;
+$color5 :#FFF3E3;
+$color6 :#F9F1E7;
+$family: "Poppins", sans-serif;
+
+
+$h1 : 1.5rem;
+$h2 : 1.2rem;
+$h3 : 1.3rem;
+$h4 : 1rem;
+$h5 : 0.75rem;
+$h6 : 0.60rem;
+$h7 : 2rem;
+$h8 : 2.5rem;
+$h9 : 1.8rem;
+
+.h1{
+  font-size: $h1;
+}
+.h2{
+  font-size: $h2;
+}
+.h3{
+  font-size: $h3;
+}
+.h4{
+  font-size: $h4;
+}
+.h5{
+  font-size: $h5;
+}
+.h6{
+  font-size: $h6;
+}
+.h7{
+  font-size: $h7;
+}
+.h8{
+  font-size: $h8;
+}
+.h9{
+  font-size: $h9;
+}
+
+
+
+@mixin breakpoint($point){
+  $xs : "(min-width:300px) and (max-width:576px)";
+  $sm : "(min-width:577px) and (max-width:767px)";
+  $md : "(min-width:768px) and (max-width:992px)";
+  $lg : "(min-width:993px) and (max-width:1200px)";
+
+@if $point == xs {
+  @media #{$xs} { @content; }
+}
+  @else if $point == sm {
+    @media #{$sm} { @content; }
+}
+  @else if $point == md {
+    @media #{$md} { @content; }
+}
+@else if $point == lg {
+  @media #{$lg} { @content; }
+}
+}

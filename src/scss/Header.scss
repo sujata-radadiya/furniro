@@ -1,0 +1,48 @@
+@import './index.scss';
+
+
+.header-sec{
+    margin-top: 1%;
+    width: 100%;
+    height: 90px;
+    position: relative;
+}
+.header-wrapper{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+    .logo-name{
+  font-size: $h9;
+  color: $color4;
+  padding-left: 8px;
+  font-weight: 700;
+  font-family: $family;
+   
+    }
+  }
+
+.nav__list{
+  display: flex;
+  list-style:none;
+  gap:60px;
+
+.nav__link{ 
+  padding: 15px 15px;
+  text-decoration: none;
+  font-size: $h1;
+  font-family: $family;
+  font-weight: 700;
+  color: $color4;
+} 
+}
+.header-icons{
+   font-size: $h1; 
+  .icon{
+  color: $color4;
+}
+}
+
+@include breakpoint(xs){
+
+}
