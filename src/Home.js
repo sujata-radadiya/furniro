@@ -5,21 +5,28 @@ import './scss/Home.scss'
 import Dining from './Assets/images/droom.jpg'
 import Living from './Assets/images/Living.png'
 import Bedroom from './Assets/images/broom.jpg'
+import Footer from './Footer'
+
+
 const Home = () => {
   return (
      <>
      
      <Header/>
 
-     <div className='banner'>
-      <img src={Bannerimg} alt='' width={2000}></img> 
-      <div className='arrival-box'>
+      <div className='mt-4 banner-container'>
+      <div className='container-fluid'>
+      <div className='position-relative'>
+        <img src={Bannerimg} alt='' className='w-100 h-100'/>
+      </div> 
+
+      <div className='arrival-box text-warning position-absolute top-30 end-0'>
         <div className=''>
-        <h6 className='head1'>New Arrival</h6>
-        <h1 className='head2'>Discover Our New Collection</h1>
-        <p className='para'>Furniture can impact all aspects of a space, which is one of the numerous reasons it is so important.</p>
+        <h6 className='mt-3 head1'>New Arrival</h6>
+        <h1 className='mt-3 head2'>Discover Our New Collection</h1>
+        <p className='mt-3 para'>Furniture can impact all aspects of a space, which is one of the numerous reasons it is so important.</p>
         <div className='b-btn'>
-        <button className='btn'>BUY NOW</button>
+        <button className='arrival-btn'>BUY NOW</button>
         </div>
       </div>
       </div>
@@ -50,6 +57,8 @@ const Home = () => {
 
           </div>
       </div>
+      </div> 
+      <Footer/>
      </>  
   )
 }

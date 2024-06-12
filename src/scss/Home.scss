@@ -1,49 +1,51 @@
 @import './index.scss';
 
-.banner{
+.banner-container{
     position: relative;
     object-fit: cover;
     width: 100%;
 }
 .arrival-box{
     background-color:transparent;
-    width: 550px;
-    height: 450px;
-    position: absolute;
-    top: 200px;
-    left: 1050px;
+    background-size: cover;
+    width: 600px;
+    height: 500px;
+    left: 1150px;
+    top: 140px;
 }
 .head1{ 
    font-size: $h1;
    letter-spacing: 5px;
    padding-left: 25%;
-   color: $color4;
-   margin-bottom: 1%;
+   color: $color3;
+   font-weight: 700;
+   margin-bottom: 5%;
 }
 .head2{
   font-size: $h9;
   font-family: $family;
   padding-left: 7%;
   color: $color4;
-  margin-bottom: 2%;
+  font-weight: 700;
 }
 .para{
   font-size: $h2;
   font-family: $family;
-  padding-left:2%;
   color: $color4;
+  font-weight: 700;
 }
-.btn{
+.arrival-btn{
   border: 1px solid $color4;
   font-size: $h1;
   font-family: $family;
-  font-weight: 500;
+  font-weight: 700;
   color:$color4;
   background-color:$color1;
-  padding: 1rem 1.5rem;
-  margin: 1rem 0;
+  padding: 15px 15px;
+  margin: 15px 0;
   justify-content: center;
   align-items: center;
+  border-radius: 70%;
 }
 .b-btn{
   padding-left: 30%;
@@ -81,4 +83,8 @@
     color: $color4;
   }
 }
+}
+
+@include breakpoint(xs){
+
 }

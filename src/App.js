@@ -1,9 +1,10 @@
 import './App.css';
+import Header from './Header';
 import Home from './Home';
-import { BrowserRouter,Route,Routes,NavLink,Router, } from 'react-router-dom';
-import Login from './Login';
+import { BrowserRouter,Route,Routes,NavLink,Router, Navigate} from 'react-router-dom';
+import Product from './Component/Product';
+import Footer from './Footer';
 
- 
 
 function App() {
   return (
@@ -13,9 +14,9 @@ function App() {
         
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='login' element={<Login/>}/> 
-         
-         
+         <Route path='header' element={<Header/>} />
+         <Route path='/product' element={<Product/>}/>
+         <Route path='/footer' element={<Footer/>}/>
       </Routes>
        
       </BrowserRouter>
