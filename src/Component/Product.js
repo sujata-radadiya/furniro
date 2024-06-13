@@ -2,11 +2,15 @@ import React, { useState,useEffect} from 'react'
 import Header from '../Header';
 import bannerbg  from '../Assets/images/backimg.jpg'
 import '../scss/Product.scss';
+import { navigate,useNavigate } from 'react-router-dom';
+ 
 
 
 function Product(){
 
+  const navigate = useNavigate();
   const [Item,setItem] = useState([]);
+    
 
   const fetchData = () => {
 
@@ -14,13 +18,19 @@ function Product(){
     .then(res => res.json())
       .then((data) => {
         setItem(data.products);
+        console.log(data);
       });
     }
+
+
 
       useEffect(() => { 
         fetchData();
       }, []);
     
+      const handleClick = () =>{
+         navigate('/productcategory')
+      }
 
   return (
      <>
@@ -35,33 +45,39 @@ function Product(){
             <h1 className=''>Explore Essential Furniture</h1>
             <p className='h5'>Impressive Collection for Your Dream Home</p>
           </div>
+          </div>
 
+          <div className='mt-5 pro-catlog row'> 
 
- 
           {
           Item.map((Item) => (
-         <tr key={Item.id} > 
          
-         <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12" data-aos="fade- 
-           right">
-         <td className="td1">
-          <img src={Item.images} className="pro-img">
-            </img></td>
+         <div className="py-5 pro-details col-lg-3 col-md-3 col-sm-6 col-xs-12">
+           
+         <div className="td1">
+          <div>
+          <img onClick={handleClick} src={Item.images[0]} className="pro-img" />
+          <div className='product-title'>{Item.title}
+          </div>
+          </div>
+          
+             </div> 
             </div>
 
-            <td className="td1">{Item.title}</td>
-            <td className="td1">{Item.price}</td>
-            <td className="td1">{Item.rating}</td>
-            <td className="td1">{Item.stock}</td>
+    
+    
              
-             </tr>
+             
+          
+             
       ))}
-       
+       </div>
            
-      </div>
+       </div>
+       </div>
 
-     </div>
-     </div>
+      
+      
      </>
   )
 }
