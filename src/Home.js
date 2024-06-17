@@ -33,7 +33,7 @@ const Home = () => {
       </div>
 
       <div className='fur-info'>
-        <h2 className='heading'>Browser The Range</h2>
+        <h2 className='heading-6 fw-bolder text-center'>Browser The Range</h2>
         <p className='prag'>Furniture, household equipment, usually made of wood, metal, plastics, marble, glass, fabrics, or related materials and having a variety of different purposes.</p>
       </div>
        

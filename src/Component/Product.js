@@ -1,85 +1,64 @@
-import React, { useState,useEffect} from 'react'
-import Header from '../Header';
-import bannerbg  from '../Assets/images/backimg.jpg'
-import '../scss/Product.scss';
-import { navigate,useNavigate } from 'react-router-dom';
- 
+import React, {useState,useEffect} from 'react'
+import { Button } from 'reactstrap'
+import { useParams } from 'react-router-dom'
 
+const Product = () => {
 
-function Product(){
+  const {id} = useParams()
+  console.log(id);
+  const [product,setProduct] =  useState([])
+  const [loading,setLoading] = useState(false)
 
-  const navigate = useNavigate();
-  const [Item,setItem] = useState([]);
-    
+  
 
   const fetchData = () => {
-
-    fetch('https://dummyjson.com/products')
-    .then(res => res.json())
+    setLoading(true);
+    fetch(`https://dummyjson.com/products/${id}`)
+      .then((res) => res.json())
       .then((data) => {
-        setItem(data.products);
-        console.log(data);
+        setProduct(data.products);
+        setLoading(false);
       });
-    }
+  };
 
+  useEffect(() => {
+    fetchData();
+  }, []);
 
+  const Loading = () => {
+    return <>Loading....</>;
+  };
 
-      useEffect(() => { 
-        fetchData();
-      }, []);
-    
-      const handleClick = () =>{
-         navigate('/productcategory')
-      }
-
+  const ShowProducts= ()=>{
   return (
      <>
+     <div className='container'>
+      <div className='row'>
+        <div className='col-lg-6 mt-5'>
+        <img src={product.images[0]} class="card-img-top" alt="" />
+        </div>
 
-     <Header/>
-
-     <div className='product-info'> 
-      <div className='container'>
-        <img src={bannerbg} alt='' w-100 h-100 />
-        <div className='row'>
-          <div className='mt-5 text-center col-12'>
-            <h1 className=''>Explore Essential Furniture</h1>
-            <p className='h5'>Impressive Collection for Your Dream Home</p>
-          </div>
-          </div>
-
-          <div className='mt-5 pro-catlog row'> 
-
-          {
-          Item.map((Item) => (
-         
-         <div className="py-5 pro-details col-lg-3 col-md-3 col-sm-6 col-xs-12">
-           
-         <div className="td1">
-          <div>
-          <img onClick={handleClick} src={Item.images[0]} className="pro-img" />
-          <div className='product-title'>{Item.title}
-          </div>
-          </div>
-          
-             </div> 
-            </div>
-
-    
-    
-             
-             
-          
-             
-      ))}
-       </div>
-           
-       </div>
-       </div>
-
-      
-      
+        <div className='col-lg-6 mt-5'>
+          <h4 className="card-category">{product.category}</h4>
+          <h1 className="card-title">{product.title}</h1>
+          <p className='fw-bolder'>Rating {product.rating}</p>
+          <h3>${product.price}</h3>
+          <p>{product.description}</p>
+          <Button variant="dark">Add to Cart</Button>
+          <Button className='ms-3' variant="dark">Go to Cart</Button>
+        </div>
+      </div>
+     </div>
      </>
   )
 }
 
+return(
+  <div>
+    <div className='container'>
+      {loading ? <Loading/> : <ShowProducts/>}
+    </div>
+  </div>
+)
+}
 export default Product
