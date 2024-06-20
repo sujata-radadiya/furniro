@@ -2,14 +2,15 @@ import React, { useState,useEffect} from 'react'
 import Header from '../Header';
 import bannerbg  from '../Assets/images/backimg.jpg'
 import '../scss/Product.scss';
-import { navigate,useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { Card } from 'reactstrap';
  
 
 
-function Product(){
+function Products(){
 
   const navigate = useNavigate();
-  const [Item,setItem] = useState([]);
+  const [Items,setItems] = useState([]);
     
 
   const fetchData = () => {
@@ -17,7 +18,7 @@ function Product(){
     fetch('https://dummyjson.com/products')
     .then(res => res.json())
       .then((data) => {
-        setItem(data.products);
+        setItems(data.products);
         console.log(data);
       });
     }
@@ -50,8 +51,8 @@ function Product(){
           <div className='mt-5 pro-catlog row'> 
 
           {
-          Item.map((Item) => (
-         
+          Items.map((Item) => (
+            
          <div className="py-5 pro-details col-lg-3 col-md-3 col-sm-6 col-xs-12">
            
          <div className="td1">
@@ -63,12 +64,13 @@ function Product(){
           
              </div> 
             </div>
+            
 
     
     
              
              
-          
+         
              
       ))}
        </div>
@@ -82,4 +84,4 @@ function Product(){
   )
 }
 
-export default Product
+export default Products

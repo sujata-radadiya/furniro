@@ -124,7 +124,7 @@ const Header = () => {
                   </NavLink>
                 </li>
                 <li className="nav__item">
-                  <NavLink to="" className="nav__link">
+                  <NavLink to="/Products" className="nav__link">
                     SHOP
                   </NavLink>
                 </li>
@@ -160,7 +160,7 @@ const Header = () => {
               <Link to="/">
                 <FontAwesomeIcon icon={faHeart} className="icon" width={60} />
               </Link>
-              <Link to="/">
+              <Link to="/cart">
                 <FontAwesomeIcon
                   icon={faCartShopping}
                   className="icon"
