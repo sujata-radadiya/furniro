@@ -48,7 +48,8 @@ const Product = () => {
          
           <h4 className="card-category">{product.category}</h4>
           <h1 className="card-title">{product.title}</h1>
-          <p className='fw-bolder'> {product.rating} 
+          <p className='fw-bolder' style={{color:"#FFA41C"}}> {product.rating} 
+           
           
           <FontAwesomeIcon icon={faStar} />
           <FontAwesomeIcon icon={faStar} />
