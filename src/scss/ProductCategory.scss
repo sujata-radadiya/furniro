@@ -1,0 +1,14 @@
+@import './index.scss';
+
+.category-button {
+  padding: 10px 20px;
+  margin-right: 5px;
+  background-color: #fff;
+  border: 1px solid #333;
+  cursor: pointer;
+}
+
+.category-button.selected {
+  background-color: #B88E2F;
+  color: black; 
+}
